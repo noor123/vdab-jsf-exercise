@@ -10,7 +10,7 @@ insert into Fortune(message) values('The man or woman you desire feels the same 
 insert into Fortune(message) values('Meeting adversity well is the source of your strength.');
 insert into Fortune(message) values('A dream you have will come true.');
 insert into Fortune(message) values('Our deeds determine us, as much as we determine our deeds.');
-insert into Fortune(message) values('Never give up. You're not a failure if you don't give up.');
+insert into Fortune(message) values('Never give up. You''re not a failure if you don''t give up.');
 insert into Fortune(message) values('You will become great if you believe in yourself.');
 insert into Fortune(message) values('There is no greater pleasure than seeing your loved ones prosper.');
 insert into Fortune(message) values('You will marry your lover.');
