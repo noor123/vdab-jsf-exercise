@@ -6,12 +6,23 @@
       xmlns:h="http://java.sun.com/jsf/html">
 
     <h:head>
-        <title>Fortne teller</title>
+        <script type="application/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
+
+        <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="fortune.css"/>
+
+        <title>Fortune teller</title>
     </h:head>
 
     <h:body>
-        <h1>Fotune</h1>
-        <p><h:outputText value="#{fortuneController.saySomethingCool()}"/></p>
+        <div class="container">
+            <h1>Fortune</h1>
+            <h:outputText value="#{fortuneController.saySomethingCool()}"/>
+        </div>
     </h:body>
 
 </html>
