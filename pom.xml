@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>be.vdab</groupId>
-    <artifactId>vdab-maven-course</artifactId>
+    <artifactId>fortune</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -37,7 +37,10 @@
     </build>
 
     <dependencies>
-        <!-- Instead of adding each subspec of JEE individually, we can use the JEE monster-jar that includes the entire specification. Don't forget to put this to provided though. -->
+        <!--
+            Instead of adding each subspec of JEE individually, we can use the JEE monster-jar that includes the
+            entire specification. Don't forget to put this to provided though.
+        -->
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
