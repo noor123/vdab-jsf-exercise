@@ -1,4 +1,6 @@
-package be.vdab;
+package be.vdab.repository;
+
+import be.vdab.domain.User;
 
 import javax.inject.Named;
 import javax.persistence.EntityManager;
@@ -6,11 +8,11 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Named
-public class FortuneRepository {
+public class UserRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    List<Fortune> findAll() {
-        return entityManager.createQuery("select f from Fortune f", Fortune.class).getResultList();
+    public List<User> findAll() {
+        return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 }
