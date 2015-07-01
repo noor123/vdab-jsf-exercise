@@ -17,16 +17,25 @@ public class User {
 
     private String birthDate;
 
+    private Gender gender;
+
+    private String mail;
+
+    private ServiceLevel level;
+
     /**
      * Used by JPA.
      */
-    protected User() {
+    public User() {
     }
 
-    public User(String firstName, String lastName, String birthDate) {
+    public User(String firstName, String lastName, String birthDate, Gender gender, String mail, ServiceLevel level) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthDate = birthDate;
+        this.gender = gender;
+        this.mail = mail;
+        this.level = level;
     }
 
     public Integer getId() {
