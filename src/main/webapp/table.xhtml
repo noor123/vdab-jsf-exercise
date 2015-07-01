@@ -15,37 +15,69 @@
 <body>
     <h1>Tabel</h1>
     <div>
-        <h:dataTable value="#{userRepository.findAll()}" var="users" styleClass="table">
+        <h:dataTable value="#{userRepository.findAll()}" var="user" styleClass="table">
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="ID"/>
                 </f:facet>
-                <h:outputText value="#{users.id}"/>
+                <h:outputText value="#{user.id}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Voornaam"/>
                 </f:facet>
-                <h:outputText value="#{users.firstName}"/>
+                <h:outputText value="#{user.firstName}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Achternaam"/>
                 </f:facet>
-                <h:outputText value="#{users.lastName}"/>
+                <h:outputText value="#{user.lastName}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Geboortedatum"/>
                 </f:facet>
-                <h:outputText value="#{users.birthDate}"/>
+                <h:outputText value="#{user.birthDate}"/>
                 <f:facet name="footer">
                     <h:outputText value="Een extra kolom"/>
                 </f:facet>
             </h:column>
+            <h:column>
+                <h:link outcome="users">
+                    <span class="glyphicon glyphicon glyphicon-eye-open"></span>
+                    <f:param name="id" value="#{user.id}"/>
+                </h:link>
+                <button type="button" data-toggle="modal" data-target="#myModal">
+                    <span class="glyphicon glyphicon glyphicon-pencil"></span>
+                </button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Edit user</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div>First Name: <h:inputText class="form-group" value="#{userBean.user.firstName}"/></div>
+                                <div>Last Name: <h:inputText class="form-group" value="#{userBean.user.lastName}"/></div>
+                                <div>Birthdate: <h:inputText class="form-group" value="#{userBean.user.birthDate}"/></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <h:commandButton class="btn btn-default" value="bewaar gegevens" action="#{userBean.editUser()}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </h:column>
         </h:dataTable>
         <h:button value="Registreer een nieuwe gebruiker" outcome="registration"/>
     </div>
-
+    <script type="application/javascript">
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#myInput').focus()
+        })
+    </script>
 </body>
 </html>

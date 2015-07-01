@@ -19,11 +19,10 @@ public class UserRepository {
     }
 
     public User findById(int id) {
-        return entityManager.find(User.class,id);
+        return entityManager.find(User.class, id);
     }
 
-    public void saveUser(User user) {
+    public void save(User user) {
         entityManager.merge(user);
-
-    }
+}
 }

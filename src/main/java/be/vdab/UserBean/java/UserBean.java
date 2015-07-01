@@ -22,7 +22,17 @@ public class UserBean {
     }
 
     public String saveUser() {
-        userRepository.saveUser(this.user);
+        userRepository.save(this.user);
+        return "table";
+    }
+
+    public String saveChanges() {
+        userRepository.save(this.user);
+        return "table";
+    }
+
+    public String editUser() {
+        userRepository.save(this.user);
         return "table";
     }
 

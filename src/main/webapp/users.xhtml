@@ -10,7 +10,7 @@
 <body>
     <c:set var="user" value="#{userRepository.findById(param['id'])}"/>
 
-    <h1><h:outputText value="#{user.firstName}"/> <h:outputText value="#{user.lastName}"/></h1>
+    <h1><h:outputText value="#{user.firstName}"/> <h:outputText value=" "/><h:outputText value="#{user.lastName}"/></h1>
 
     <p>De geboortedatum van deze gebruiker is: #{user.birthDate}</p>
 

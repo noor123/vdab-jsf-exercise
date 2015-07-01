@@ -69,4 +69,9 @@ public class User {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
+    public String fullName() {
+        return firstName + " " + lastName;
+    }
+
 }
