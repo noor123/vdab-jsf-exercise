@@ -17,10 +17,7 @@ public class User {
 
     private String birthDate;
 
-    /**
-     * Used by JPA.
-     */
-    protected User() {
+    public User() {
     }
 
     public User(String firstName, String lastName, String birthDate) {
@@ -60,4 +57,9 @@ public class User {
     public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
+
+    public String fullName() {
+        return firstName + " " + lastName;
+    }
+
 }
